@@ -3,25 +3,34 @@ body {
     background-color: #f8fafc; /* slate-50 */
 }
 
-.hero-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/dddddd/333333?text=Sample+Campus');
+/* Old .hero-bg, #particles-js, and .hero-bg > .container styles removed */
+
+.hero-slider .swiper-slide {
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax Effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0; /* Ensure it's behind the hero content */
+.hero-slide-content {
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
 }
-
-.hero-bg > .container { /* Ensure hero content is above particles */
-    position: relative;
-    z-index: 1;
+.swiper-button-next, .swiper-button-prev {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+}
+.swiper-pagination-bullet-active {
+    background: #FFFFFF;
 }
 
 .cta-glow {
@@ -70,4 +79,43 @@ body {
     color: black;
     border-radius: 3px;
     padding: 0.1em;
+}
+
+.marquee-container {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-content {
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+.news-item-marquee {
+    /* Tailwind classes flex-shrink-0, min-w-[...] handle sizing and shrinking */
+}
+
+.gallery-item-container img::selection {
+    background: transparent;
+}
+.gallery-item-container img::-moz-selection {
+    background: transparent;
+}
+
+#page-particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it's behind all other content */
+    background-color: #f8fafc; /* Optional: match page background or a subtle color */
 }

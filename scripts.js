@@ -7,21 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         once: true
     });
 
-    // Typed.js for Hero Subtitle
-    if (document.getElementById('typed-subtitle')) {
-        new Typed('#typed-subtitle', {
-            strings: [
-                'An exemplary CBSE institution in Sample City.',
-                'Dedicated to holistic development.',
-                'Fostering knowledge, character, and excellence.'
-            ],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true,
-            smartBackspace: true
-        });
-    }
-    
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -113,73 +98,101 @@ document.addEventListener('DOMContentLoaded', function() {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // tsParticles initialization
-    if (document.getElementById('particles-js')) {
-        tsParticles.load("particles-js", {
+    // tsParticles initialization for page background
+    if (document.getElementById('page-particles')) {
+        tsParticles.load("page-particles", {
             fpsLimit: 60,
-            interactivity: {
-                events: {
-                    onHover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onClick: {
-                        enable: true,
-                        mode: "push"
-                    }
-                },
-                modes: {
-                    repulse: {
-                        distance: 100,
-                        duration: 0.4
-                    },
-                    push: {
-                        quantity: 4
-                    }
-                }
-            },
             particles: {
-                color: {
-                    value: "#ffffff"
-                },
-                links: {
-                    color: "#ffffff",
-                    distance: 150,
-                    enable: true,
-                    opacity: 0.5,
-                    width: 1
-                },
-                collisions: {
-                    enable: true
-                },
-                move: {
-                    direction: "none",
-                    enable: true,
-                    outModes: {
-                        default: "bounce"
-                    },
-                    random: false,
-                    speed: 2,
-                    straight: false
-                },
                 number: {
+                    value: 50,
                     density: {
                         enable: true,
                         area: 800
-                    },
-                    value: 80
+                    }
                 },
-                opacity: {
-                    value: 0.5
+                color: {
+                    value: ["#3b82f6", "#10b981", "#f59e0b", "#6366f1"]
                 },
                 shape: {
-                    type: "circle"
+                    type: ["circle", "square", "triangle", "polygon"],
+                    polygon: {
+                        sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.3,
+                    random: true
                 },
                 size: {
-                    value: { min: 1, max: 5 }
+                    value: {min: 5, max: 15},
+                    random: true,
+                },
+                links: {
+                    enable: false
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    outModes: {
+                        default: "out"
+                    }
                 }
             },
-            detectRetina: true
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: false, // Keep interactivity disabled for global background
+                    },
+                    onClick: {
+                        enable: false, // Keep interactivity disabled for global background
+                    }
+                }
+            },
+            detectRetina: true,
+            background: {
+                color: 'transparent'
+            }
+        });
+    }
+
+    // SwiperJS Hero Slider Initialization
+    if (document.querySelector('.hero-slider')) {
+        const heroSwiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000, // 5 seconds
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+    }
+
+    // Re-initialize Typed.js for the first slide
+    if (document.getElementById('typed-subtitle-slide1')) {
+        new Typed('#typed-subtitle-slide1', {
+            strings: [
+                'An exemplary CBSE institution in Sample City.',
+                'Dedicated to holistic development.',
+                'Fostering knowledge, character, and excellence.'
+            ],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true,
+            smartBackspace: true
         });
     }
 
@@ -243,6 +256,65 @@ document.addEventListener('DOMContentLoaded', function() {
             if (event.key === 'Enter') {
                 performSearch();
             }
+        });
+    }
+
+    // Disable context menu on gallery images
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    galleryImages.forEach(img => {
+        img.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Section Title Underline Animation
+    document.querySelectorAll('.section-title').forEach(title => {
+        gsap.to(title, {
+            '--underline-width': '80px',
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 85%',
+                toggleActions: 'play none none none',
+            },
+            duration: 0.7,
+            ease: 'power2.out'
+        });
+    });
+
+    // Statistic Counters Animation
+    const statsItems = document.querySelectorAll('.py-16.bg-white .grid.grid-cols-2.md\\:grid-cols-4 > div');
+    if (statsItems.length > 0) {
+        gsap.from(statsItems, {
+            scrollTrigger: {
+                trigger: statsItems[0].parentNode,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.2,
+            ease: 'power2.out',
+        });
+    }
+
+    // Academic Program Cards Animation
+    const academicCards = document.querySelectorAll('#academics .grid.md\\:grid-cols-3 > div');
+    if (academicCards.length > 0) {
+        gsap.from(academicCards, {
+            scrollTrigger: {
+                trigger: academicCards[0].parentNode,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.2,
+            ease: 'power2.out',
         });
     }
 });
