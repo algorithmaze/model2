@@ -14,12 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body class="bg-slate-50 text-gray-800">
-
+    <div id="page-particles"></div>
     <header id="header" class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300">
         <div class="bg-blue-800 text-white text-xs py-1">
             <div class="container mx-auto px-4 flex justify-between items-center">
@@ -73,17 +74,71 @@
     </div>
 
     <main>
-        <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20">
-            <div id="particles-js"></div>
-            <div class="container mx-auto px-4" data-aos="fade-up">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Sample School</h1>
-                <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto">
-                    <span id="typed-subtitle"></span>
-                </p>
-                <div class="space-x-4">
-                    <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
-                    <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+        <section id="home" class="h-screen relative"> <!-- Adjusted class, h-screen might need review -->
+            <!-- Swiper -->
+            <div class="swiper-container hero-slider h-full">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide" style="background-image: url('https://placehold.co/1920x1080/A9D2F5/333333?text=Hero+Image+1:%0AStudents+Learning');">
+                        <div class="hero-slide-content container mx-auto px-4 flex flex-col items-center justify-center text-white text-center h-full">
+                            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight" data-aos="fade-up">Sample School</h1>
+                            <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100"><span id="typed-subtitle-slide1"></span></p>
+                            <div class="space-x-4" data-aos="fade-up" data-aos-delay="200">
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide" style="background-image: url('https://placehold.co/1920x1080/F5D0A9/333333?text=Hero+Image+2:%0ASchool+Campus');">
+                        <div class="hero-slide-content container mx-auto px-4 flex flex-col items-center justify-center text-white text-center h-full">
+                             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Sample School</h1>
+                             <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto">Inspiring Future Leaders.</p>
+                             <div class="space-x-4">
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide" style="background-image: url('https://placehold.co/1920x1080/A9F5A9/333333?text=Hero+Image+3:%0ASchool+Library');">
+                        <div class="hero-slide-content container mx-auto px-4 flex flex-col items-center justify-center text-white text-center h-full">
+                             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Sample School</h1>
+                             <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto">A World of Knowledge Awaits.</p>
+                             <div class="space-x-4">
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide" style="background-image: url('https://placehold.co/1920x1080/F5A9A9/333333?text=Hero+Image+4:%0ASports+Activity');">
+                         <div class="hero-slide-content container mx-auto px-4 flex flex-col items-center justify-center text-white text-center h-full">
+                             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Sample School</h1>
+                             <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto">Nurturing Talent, Building Character.</p>
+                             <div class="space-x-4">
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide" style="background-image: url('https://placehold.co/1920x1080/D0A9F5/333333?text=Hero+Image+5:%0AClassroom+Interaction');">
+                         <div class="hero-slide-content container mx-auto px-4 flex flex-col items-center justify-center text-white text-center h-full">
+                             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Sample School</h1>
+                             <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto">Excellence in Every Classroom.</p>
+                             <div class="space-x-4">
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
@@ -119,7 +174,7 @@
                 <h2 class="section-title text-3xl font-bold text-center mb-12" data-aos="fade-down">Welcome to SS</h2>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right">
-                        <img src="https://placehold.co/600x400/cccccc/FFFFFF?text=Sample+Principal" alt="Sample Principal" class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/600x400/BDBDBD/FFFFFF?text=New+Sample+Principal" alt="New Sample Principal" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div data-aos="fade-left">
                         <h3 class="text-2xl font-semibold mb-4 text-blue-700">From the Principal's Desk</h3>
@@ -296,31 +351,100 @@
             </div>
         </section>
 
-        <section id="news" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title text-3xl font-bold text-center mb-12" data-aos="fade-down">Latest News</h2>
-                <div class="grid md:grid-cols-3 gap-8" id="news-items-container">
-                    <div class="news-item bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Sample News Title 1</h3>
+    <section id="news" class="py-12 bg-slate-100"> <!-- Adjusted padding and background -->
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-10" data-aos="fade-down">Latest News</h2>
+            <div class="marquee-container overflow-hidden whitespace-nowrap relative">
+                <div class="marquee-content flex py-4">
+                    <!-- Original news items will be here, ensure they are styled for inline display and have some margin -->
+                    <div class="news-item-marquee bg-white p-6 rounded-lg shadow-lg mx-4 min-w-[300px] md:min-w-[350px] flex-shrink-0">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 truncate">Sample News Title 1</h3>
                         <p class="text-gray-600 text-sm mb-1"><em>October 26, 2023</em></p>
-                        <p class="text-gray-600 mb-3">A brief description of the news item. This is just a sample text to showcase the news section...</p>
-                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link">Read More &rarr;</a>
+                        <p class="text-gray-600 mb-3 text-sm line-clamp-3">A brief description of the news item. This is just a sample text to showcase the news section and how it might appear when scrolling continuously across the screen.</p>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link text-sm">Read More &rarr;</a>
                     </div>
-                    <div class="news-item bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Sample News Title 2</h3>
+                    <div class="news-item-marquee bg-white p-6 rounded-lg shadow-lg mx-4 min-w-[300px] md:min-w-[350px] flex-shrink-0">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 truncate">Sample News Title 2</h3>
                         <p class="text-gray-600 text-sm mb-1"><em>October 27, 2023</em></p>
-                        <p class="text-gray-600 mb-3">Another news update to fill the space and demonstrate the layout of news articles.</p>
-                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link">Read More &rarr;</a>
+                        <p class="text-gray-600 mb-3 text-sm line-clamp-3">Another news update to fill the space and demonstrate the layout of news articles as they scroll horizontally, providing a dynamic feel to the news updates.</p>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link text-sm">Read More &rarr;</a>
                     </div>
-                    <div class="news-item bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Sample News Title 3</h3>
+                    <div class="news-item-marquee bg-white p-6 rounded-lg shadow-lg mx-4 min-w-[300px] md:min-w-[350px] flex-shrink-0">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 truncate">Sample News Title 3</h3>
                         <p class="text-gray-600 text-sm mb-1"><em>October 28, 2023</em></p>
-                        <p class="text-gray-600 mb-3">This is the third sample news item, providing more content for the news section design.</p>
-                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link">Read More &rarr;</a>
+                        <p class="text-gray-600 mb-3 text-sm line-clamp-3">This is the third sample news item, providing more content for the news section design, ensuring enough items for a smooth scrolling experience.</p>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link text-sm">Read More &rarr;</a>
+                    </div>
+                    <!-- Add 2 more news items for a total of 5 to make scrolling more effective -->
+                    <div class="news-item-marquee bg-white p-6 rounded-lg shadow-lg mx-4 min-w-[300px] md:min-w-[350px] flex-shrink-0">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 truncate">Sample News Title 4</h3>
+                        <p class="text-gray-600 text-sm mb-1"><em>October 29, 2023</em></p>
+                        <p class="text-gray-600 mb-3 text-sm line-clamp-3">Fourth news item added to enhance the continuous scroll effect and provide more content diversity in the marquee display for users.</p>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link text-sm">Read More &rarr;</a>
+                    </div>
+                    <div class="news-item-marquee bg-white p-6 rounded-lg shadow-lg mx-4 min-w-[300px] md:min-w-[350px] flex-shrink-0">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2 truncate">Sample News Title 5</h3>
+                        <p class="text-gray-600 text-sm mb-1"><em>October 30, 2023</em></p>
+                        <p class="text-gray-600 mb-3 text-sm line-clamp-3">The fifth and final new sample news item for this auto-scrolling section, completing the set for a fluid marquee presentation.</p>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold read-more-link text-sm">Read More &rarr;</a>
                     </div>
                 </div>
-                <div class="text-center mt-12" data-aos="fade-up">
-                    <a href="#" id="view-more-news" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition">View More News</a>
+            </div>
+        </div>
+    </section>
+
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-3xl font-bold text-center mb-12" data-aos="fade-down">Our Gallery</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="gallery-grid">
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up">
+                        <img src="https://placehold.co/800x600/E6E6E6/333333?text=Gallery+1:%0ASchool+Event" alt="Gallery Image 1: School Event" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">School Event</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://placehold.co/800x600/D8D8D8/333333?text=Gallery+2:%0AStudent+Achievement" alt="Gallery Image 2: Student Achievement" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Student Achievement</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/800x600/E6E6E6/333333?text=Gallery+3:%0AArt+Project" alt="Gallery Image 3: Art Project" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Art Project</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://placehold.co/800x600/D8D8D8/333333?text=Gallery+4:%0AScience+Experiment" alt="Gallery Image 4: Science Experiment" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Science Experiment</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/800x600/E6E6E6/333333?text=Gallery+5:%0AGroup+Activity" alt="Gallery Image 5: Group Activity" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Group Activity</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="250">
+                        <img src="https://placehold.co/800x600/D8D8D8/333333?text=Gallery+6:%0AMusic+Class" alt="Gallery Image 6: Music Class" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Music Class</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/800x600/E6E6E6/333333?text=Gallery+7:%0ADebate+Club" alt="Gallery Image 7: Debate Club" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Debate Club</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-container relative rounded-lg overflow-hidden shadow-lg group" data-aos="fade-up" data-aos-delay="350">
+                        <img src="https://placehold.co/800x600/D8D8D8/333333?text=Gallery+8:%0ACultural+Fest" alt="Gallery Image 8: Cultural Fest" class="gallery-image w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cultural Fest</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -434,6 +558,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts.js"></script>
     
 </body>
