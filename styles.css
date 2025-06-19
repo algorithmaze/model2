@@ -4,10 +4,24 @@ body {
 }
 
 .hero-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=AGIS+Campus');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/dddddd/333333?text=Sample+Campus');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax Effect */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure it's behind the hero content */
+}
+
+.hero-bg > .container { /* Ensure hero content is above particles */
+    position: relative;
+    z-index: 1;
 }
 
 .cta-glow {
@@ -44,7 +58,16 @@ body {
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1); /* Existing */
+    backdrop-filter: blur(10px); /* Existing */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Existing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0,0,0,0.08); /* Added fallback shadow */
+    /* border-radius: 0.5rem; */ /* Tailwind 'rounded-lg' is already applied in HTML */
+}
+
+.search-highlight {
+    background-color: yellow;
+    color: black;
+    border-radius: 3px;
+    padding: 0.1em;
 }

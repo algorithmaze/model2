@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('typed-subtitle')) {
         new Typed('#typed-subtitle', {
             strings: [
-                'An exemplary CBSE institution in Gurugram.',
+                'An exemplary CBSE institution in Sample City.',
                 'Dedicated to holistic development.',
                 'Fostering knowledge, character, and excellence.'
             ],
@@ -28,19 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
     
     if (mobileMenuButton && mobileMenu) {
+        const menuIcon = mobileMenuButton.querySelector('i'); // Query icon once
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuButton.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            if (menuIcon) { // Check if icon exists
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            }
         });
 
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-                const icon = mobileMenuButton.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
+                if (menuIcon) { // Check if icon exists
+                    menuIcon.classList.add('fa-bars');
+                    menuIcon.classList.remove('fa-times');
+                }
             });
         });
     }
@@ -110,4 +113,136 @@ document.addEventListener('DOMContentLoaded', function() {
         yearSpan.textContent = new Date().getFullYear();
     }
 
+    // tsParticles initialization
+    if (document.getElementById('particles-js')) {
+        tsParticles.load("particles-js", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onClick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        quantity: 4
+                    }
+                }
+            },
+            particles: {
+                color: {
+                    value: "#ffffff"
+                },
+                links: {
+                    color: "#ffffff",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 1
+                },
+                collisions: {
+                    enable: true
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: {
+                        default: "bounce"
+                    },
+                    random: false,
+                    speed: 2,
+                    straight: false
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800
+                    },
+                    value: 80
+                },
+                opacity: {
+                    value: 0.5
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: { min: 1, max: 5 }
+                }
+            },
+            detectRetina: true
+        });
+    }
+
+    // Search Functionality
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const mainContent = document.querySelector('main');
+
+    let originalContent = new Map();
+
+    function removeHighlights() {
+        const highlights = mainContent.querySelectorAll('span.search-highlight');
+        highlights.forEach(span => {
+            const parent = span.parentNode;
+            if (originalContent.has(parent)) {
+                parent.innerHTML = originalContent.get(parent);
+            } else {
+                parent.replaceChild(document.createTextNode(span.textContent), span);
+            }
+        });
+        originalContent.clear();
+    }
+
+    function performSearch() {
+        removeHighlights();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        if (!searchTerm) {
+            return;
+        }
+
+        const textElements = mainContent.querySelectorAll('p, h1, h2, h3, h4, li, td, span');
+        let firstMatch = null;
+
+        textElements.forEach(el => {
+            if (el.closest('script, style, .search-highlight')) return;
+
+            if (!originalContent.has(el) && el.textContent.toLowerCase().includes(searchTerm)) {
+                 originalContent.set(el, el.innerHTML);
+            }
+
+            const text = el.innerHTML;
+            const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+
+            if (regex.test(el.textContent)) {
+                el.innerHTML = text.replace(regex, `<span class="search-highlight">$1</span>`);
+                if (!firstMatch) {
+                    firstMatch = el;
+                }
+            }
+        });
+
+        if (firstMatch) {
+            firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    if (searchButton && searchInput && mainContent) {
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
 });
