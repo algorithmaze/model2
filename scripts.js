@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 color: {
-                    value: ["#3b82f6", "#10b981", "#f59e0b", "#6366f1"]
+                    value: ["#2563EB", "#10B981", "#38BDF8", "#4F46E5"] // Updated: blue-600, green-500, sky-500, indigo-600
                 },
                 shape: {
                     type: ["circle", "square", "triangle", "polygon"],
@@ -315,6 +315,69 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 0.5,
             stagger: 0.2,
             ease: 'power2.out',
+        });
+    }
+
+    // Admission Popup Functionality
+    const admissionPopupOverlay = document.getElementById('admission-popup-overlay');
+    const admissionPopupModal = document.getElementById('admission-popup-modal');
+    const closeAdmissionPopupButton = document.getElementById('close-admission-popup');
+    const popupAdmissionsLink = document.getElementById('popup-admissions-link');
+
+    function showAdmissionPopup() {
+        if (admissionPopupOverlay && admissionPopupModal) {
+            admissionPopupOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                admissionPopupModal.classList.remove('opacity-0', 'scale-95');
+                admissionPopupModal.classList.add('opacity-100', 'scale-100');
+            }, 50);
+        }
+    }
+
+    function hideAdmissionPopup() {
+        if (admissionPopupOverlay && admissionPopupModal) {
+            admissionPopupModal.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                 admissionPopupOverlay.classList.add('hidden');
+                 admissionPopupModal.classList.remove('opacity-100', 'scale-100');
+            }, 300);
+        }
+    }
+
+    if (closeAdmissionPopupButton) {
+        closeAdmissionPopupButton.addEventListener('click', hideAdmissionPopup);
+    }
+
+    if (popupAdmissionsLink) {
+        popupAdmissionsLink.addEventListener('click', () => {
+            setTimeout(hideAdmissionPopup, 100);
+        });
+    }
+
+    if (admissionPopupOverlay) {
+        admissionPopupOverlay.addEventListener('click', function(event) {
+            if (event.target === admissionPopupOverlay) {
+                hideAdmissionPopup();
+            }
+        });
+
+        setTimeout(showAdmissionPopup, 2000);
+    }
+
+    // Info Box Animation
+    const infoBoxes = document.querySelectorAll('.info-box');
+    if (infoBoxes.length > 0) {
+        gsap.from(infoBoxes, {
+            scrollTrigger: {
+                trigger: "#why-choose-us",
+                start: "top 75%",
+                toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 60,
+            duration: 0.7,
+            stagger: 0.25,
+            ease: "power3.out",
         });
     }
 });
