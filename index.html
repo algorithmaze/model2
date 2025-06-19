@@ -22,7 +22,7 @@
 <body class="bg-slate-50 text-gray-800">
     <div id="page-particles"></div>
     <header id="header" class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300">
-        <div class="bg-blue-800 text-white text-xs py-1">
+        <div class="bg-blue-700 text-white text-xs py-1"> {/* Updated Top Bar Blue */}
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <div>
                     <a href="#" class="hover:underline mr-4"><i class="fas fa-money-bill-wave mr-1"></i> Pay Fees Online</a>
@@ -37,9 +37,9 @@
             </div>
         </div>
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-blue-700">SS</a>
+            <a href="#" class="text-2xl font-extrabold text-blue-700">SS</a> {/* Logo color - kept blue-700 */}
             <div class="hidden md:flex items-center space-x-6 font-semibold text-gray-600">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#home" class="hover:text-blue-600 transition">Home</a> {/* Nav hover - kept blue-600 */}
                 <a href="#about" class="hover:text-blue-600 transition">About Us</a>
                 <a href="#academics" class="hover:text-blue-600 transition">Academics</a>
                 <a href="#admissions" class="hover:text-blue-600 transition">Admissions</a>
@@ -47,14 +47,14 @@
                 <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </div>
             <div class="flex items-center">
-                <a href="#admissions" class="hidden sm:block bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600 transition mr-4">Admissions Open</a>
+                <a href="#admissions" class="hidden sm:block bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition mr-4">Admissions Open</a> {/* Admissions Button to Green */}
                 <div class="relative ml-2 sm:ml-4">
-                    <input type="text" id="search-input" placeholder="Search..." class="px-3 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700 w-32 sm:w-48">
-                    <button id="search-button" class="absolute right-0 top-0 h-full px-3 text-blue-600 hover:text-blue-800">
+                    <input type="text" id="search-input" placeholder="Search..." class="px-3 py-2 border rounded-lg focus:ring-blue-600 focus:border-blue-600 text-sm text-gray-700 w-32 sm:w-48"> {/* Search focus to blue-600 */}
+                    <button id="search-button" class="absolute right-0 top-0 h-full px-3 text-blue-600 hover:text-blue-700"> {/* Search button blue-600, hover blue-700 */}
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-2xl text-blue-700 ml-2">
+                <button id="mobile-menu-button" class="md:hidden text-2xl text-blue-700 ml-2"> {/* Mobile menu icon blue-700 */}
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -84,7 +84,7 @@
                             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight" data-aos="fade-up">Sample School</h1>
                             <p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100"><span id="typed-subtitle-slide1"></span></p>
                             <div class="space-x-4" data-aos="fade-up" data-aos-delay="200">
-                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a>
+                                <a href="#admissions" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition cta-glow">Apply for Admissions</a> {/* Hero CTA blue-600 */}
                                 <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition">Schedule a Tour</a>
                             </div>
                         </div>
@@ -145,23 +145,23 @@
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div data-aos="fade-up">
-                        <i class="fas fa-user-friends text-blue-500 text-4xl mb-2"></i>
+                    <div> {/* data-aos removed for GSAP */ }
+                        <i class="fas fa-user-friends text-green-500 text-4xl mb-2"></i> {/* Stats Icons to Green */}
                         <h3 class="text-4xl font-bold text-gray-800"><span class="counter" data-target="5000">0</span>+</h3>
                         <p class="text-gray-500">Happy Alumni</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-award text-blue-500 text-4xl mb-2"></i>
+                    <div> {/* data-aos removed for GSAP */ }
+                        <i class="fas fa-award text-green-500 text-4xl mb-2"></i> {/* Stats Icons to Green */}
                         <h3 class="text-4xl font-bold text-gray-800"><span class="counter" data-target="15">0</span>+</h3>
                         <p class="text-gray-500">Years of Excellence</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-flask text-blue-500 text-4xl mb-2"></i>
+                    <div> {/* data-aos removed for GSAP */ }
+                        <i class="fas fa-flask text-green-500 text-4xl mb-2"></i> {/* Stats Icons to Green */}
                         <h3 class="text-4xl font-bold text-gray-800"><span class="counter" data-target="30">0</span>+</h3>
                         <p class="text-gray-500">Student Clubs</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-chalkboard-teacher text-blue-500 text-4xl mb-2"></i>
+                    <div> {/* data-aos removed for GSAP */ }
+                        <i class="fas fa-chalkboard-teacher text-green-500 text-4xl mb-2"></i> {/* Stats Icons to Green */}
                         <h3 class="text-4xl font-bold text-gray-800"><span class="counter" data-target="85">0</span>+</h3>
                         <p class="text-gray-500">Qualified Teachers</p>
                     </div>
@@ -186,27 +186,65 @@
             </div>
         </section>
 
+        <section id="why-choose-us" class="py-20 bg-slate-50"> <!-- Or bg-white if preferred -->
+            <div class="container mx-auto px-4">
+                <h2 class="section-title text-3xl font-bold text-center mb-16" data-aos="fade-down">Why Choose Sample School?</h2>
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12 text-center">
+                    <!-- Info Box 1 -->
+                    <div class="info-box p-8 bg-white rounded-xl shadow-xl border-t-4 border-green-500 transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex justify-center mb-4">
+                            <img src="https://placehold.co/80x80/10B981/FFFFFF?text=ICON1" alt="Holistic Development Icon" class="rounded-full">
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">Holistic Development</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            We focus on nurturing all aspects of a child's growth – academic, social, emotional, and physical – for well-rounded individuals.
+                        </p>
+                    </div>
+                    <!-- Info Box 2 -->
+                    <div class="info-box p-8 bg-white rounded-xl shadow-xl border-t-4 border-blue-600 transform hover:scale-105 transition-transform duration-300">
+                         <div class="flex justify-center mb-4">
+                            <img src="https://placehold.co/80x80/2563EB/FFFFFF?text=ICON2" alt="Experienced Faculty Icon" class="rounded-full">
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">Experienced Faculty</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Our dedicated and qualified educators are passionate about teaching and inspiring students to achieve their full potential.
+                        </p>
+                    </div>
+                    <!-- Info Box 3 -->
+                    <div class="info-box p-8 bg-white rounded-xl shadow-xl border-t-4 border-sky-500 transform hover:scale-105 transition-transform duration-300">
+                         <div class="flex justify-center mb-4">
+                            <img src="https://placehold.co/80x80/38BDF8/0F172A?text=ICON3" alt="Safe Environment Icon" class="rounded-full">
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">Safe & Nurturing Environment</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            We provide a secure, supportive, and inclusive atmosphere where students feel valued, respected, and encouraged to learn.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="academics" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-3xl font-bold text-center mb-12" data-aos="fade-down">Our Academic Programs</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up">
+                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"> {/* data-aos removed for GSAP */}
                         <div class="text-center">
-                            <i class="fas fa-child text-4xl text-blue-500 mb-4"></i>
+                            <i class="fas fa-child text-green-500 text-4xl mb-4"></i> {/* Academic Icons to Green */}
                             <h3 class="text-xl font-bold mb-2">Primary School</h3>
                             <p class="text-gray-600">A nurturing environment focusing on foundational literacy, numeracy, and inquiry-based learning.</p>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"> {/* data-aos removed for GSAP */}
                         <div class="text-center">
-                            <i class="fas fa-book-open text-4xl text-blue-500 mb-4"></i>
+                            <i class="fas fa-book-open text-green-500 text-4xl mb-4"></i> {/* Academic Icons to Green */}
                             <h3 class="text-xl font-bold mb-2">Middle School</h3>
                             <p class="text-gray-600">Building on fundamentals with a broad curriculum to develop critical thinking and collaborative skills.</p>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"> {/* data-aos removed for GSAP */}
                         <div class="text-center">
-                            <i class="fas fa-graduation-cap text-4xl text-blue-500 mb-4"></i>
+                            <i class="fas fa-graduation-cap text-green-500 text-4xl mb-4"></i> {/* Academic Icons to Green */}
                             <h3 class="text-xl font-bold mb-2">Senior Secondary</h3>
                             <p class="text-gray-600">Specialized streams (Science, Commerce, Humanities) preparing students for board exams and beyond.</p>
                         </div>
@@ -215,11 +253,11 @@
             </div>
         </section>
 
-        <section id="admissions" class="py-20 bg-blue-700 text-white">
+        <section id="admissions" class="py-20 bg-blue-600 text-white"> {/* Admissions CTA to blue-600 */}
             <div class="container mx-auto px-4 text-center" data-aos="zoom-in">
                 <h2 class="text-3xl font-bold mb-4">Join the SS Family</h2>
                 <p class="max-w-2xl mx-auto mb-8">We are now accepting applications for the 2025-26 academic session. Take the first step towards a bright future for your child.</p>
-                <a href="#contact" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-bold text-lg hover:bg-slate-100 transition">Enquire Now</a>
+                <a href="#contact" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-bold text-lg hover:bg-slate-100 transition">Enquire Now</a> {/* Button text kept blue-700 for contrast */}
             </div>
         </section>
         
@@ -271,7 +309,7 @@
                             <h4 class="font-bold mb-2 text-lg text-gray-700">Last 3-Year Board Results</h4>
                             <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
                                 <table class="w-full text-sm text-left">
-                                    <thead class="bg-blue-600 text-white uppercase tracking-wider">
+                                    <thead class="bg-blue-600 text-white uppercase tracking-wider"> {/* Table head kept blue-600 */}
                                         <tr>
                                             <th class="px-4 py-3 font-semibold">Year</th>
                                             <th class="px-4 py-3 font-semibold">Class</th>
@@ -286,7 +324,7 @@
                                             <td class="px-4 py-3">X</td>
                                             <td class="px-4 py-3">150</td>
                                             <td class="px-4 py-3">150</td>
-                                            <td class="px-4 py-3 font-medium text-green-600">100%</td>
+                                            <td class="px-4 py-3 font-medium text-green-600">100%</td> {/* Pass % kept green */}
                                         </tr>
                                         <tr class="hover:bg-gray-50">
                                             <td class="px-4 py-3">2024</td>
@@ -307,7 +345,7 @@
                                             <td class="px-4 py-3">XII</td>
                                             <td class="px-4 py-3">115</td>
                                             <td class="px-4 py-3">112</td>
-                                            <td class="px-4 py-3 font-medium text-yellow-600">97.4%</td>
+                                            <td class="px-4 py-3 font-medium text-yellow-600">97.4%</td> {/* Lower pass % kept yellow for differentiation */}
                                         </tr>
                                          <tr class="hover:bg-gray-50">
                                             <td class="px-4 py-3">2022</td>
@@ -320,7 +358,7 @@
                                 </table>
                             </div>
                             <h4 class="font-bold mb-2 mt-4">Academic Documents</h4>
-                            <ul class="list-disc list-inside space-y-2 text-blue-600">
+                            <ul class="list-disc list-inside space-y-2 text-blue-600"> {/* Links kept blue-600 */}
                                 <li><a href="#" target="_blank" class="hover:underline">Fee Structure 2025-26</a></li>
                                 <li><a href="#" target="_blank" class="hover:underline">Annual Academic Calendar 2025-26</a></li>
                                 <li><a href="#" target="_blank" class="hover:underline">School Management Committee (SMC)</a></li>
@@ -449,18 +487,18 @@
             </div>
         </section>
 
-        <section class="py-20 bg-gray-800 text-white hero-bg">
+        <section class="py-20 bg-slate-800 text-white hero-bg"> {/* Testimonial BG to slate-800 */}
             <div class="container mx-auto px-4">
                 <h2 class="section-title text-3xl font-bold text-center mb-12" data-aos="fade-down">What Our Community Says</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="testimonial-card p-8 rounded-lg" data-aos="fade-up">
-                        <i class="fas fa-quote-left text-3xl text-blue-400 mb-4"></i>
+                        <i class="fas fa-quote-left text-3xl text-green-400 mb-4"></i> {/* Testimonial Icons to lighter green */}
                         <p class="mb-4">SS has been a second home for our daughter. The focus on both academic rigor and co-curricular activities is exceptional. The teachers truly care about the students' holistic development.</p>
                         <div class="font-bold">- Mrs. Priya Singh</div>
                         <div class="text-sm text-gray-300">Parent of Aanya Singh, Class VIII</div>
                     </div>
                     <div class="testimonial-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-quote-left text-3xl text-blue-400 mb-4"></i>
+                        <i class="fas fa-quote-left text-3xl text-green-400 mb-4"></i> {/* Testimonial Icons to lighter green */}
                         <p class="mb-4">The teachers are incredibly supportive and helped me discover my passion for science. The robotics club is my favourite part of school! I feel prepared for my future challenges.</p>
                         <div class="font-bold">- Rohan Verma</div>
                         <div class="text-sm text-gray-300">Student, Class XI</div>
@@ -478,10 +516,10 @@
                         <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
                         <p class="mb-4 text-gray-600">We are always happy to hear from you. Please feel free to reach out with any questions or to schedule a visit.</p>
                         <div class="space-y-4">
-                            <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i> Sample Location, Sample City, Sample State - 000000</p>
-                            <p><i class="fas fa-phone-alt text-blue-500 w-6"></i> +91-000-0000-0000</p>
-                            <p><i class="fas fa-envelope text-blue-500 w-6"></i> info@sampleschool.edu.in</p>
-                            <p><i class="fas fa-clock text-blue-500 w-6"></i> Mon - Fri: 8:00 AM - 4:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt text-green-500 w-6"></i> Sample Location, Sample City, Sample State - 000000</p> {/* Contact Icons to Green */}
+                            <p><i class="fas fa-phone-alt text-green-500 w-6"></i> +91-000-0000-0000</p>
+                            <p><i class="fas fa-envelope text-green-500 w-6"></i> info@sampleschool.edu.in</p>
+                            <p><i class="fas fa-clock text-green-500 w-6"></i> Mon - Fri: 8:00 AM - 4:00 PM</p>
                         </div>
                         <div class="mt-8 rounded-lg overflow-hidden shadow-xl">
                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.393963428983!2d77.02376471507746!3d28.40742198250796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23f3ab31b579%3A0x839359556d11b15!2sSample%20City%2C%20Sample%20State!5e0!3m2!1sen!2sin!4v1678886455555!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -492,21 +530,21 @@
                         <form action="#" class="space-y-4 bg-white p-8 rounded-lg shadow-lg">
                             <div>
                                 <label for="name" class="block mb-1 font-semibold">Your Name</label>
-                                <input type="text" id="name" class="w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                <input type="text" id="name" class="w-full p-2 border rounded-md focus:ring-blue-600 focus:border-blue-600"> {/* Form focus to blue-600 */}
                             </div>
                             <div>
                                 <label for="email" class="block mb-1 font-semibold">Email Address</label>
-                                <input type="email" id="email" class="w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                <input type="email" id="email" class="w-full p-2 border rounded-md focus:ring-blue-600 focus:border-blue-600">
                             </div>
                             <div>
                                 <label for="phone" class="block mb-1 font-semibold">Phone Number</label>
-                                <input type="tel" id="phone" class="w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                <input type="tel" id="phone" class="w-full p-2 border rounded-md focus:ring-blue-600 focus:border-blue-600">
                             </div>
                             <div>
                                 <label for="message" class="block mb-1 font-semibold">Your Message</label>
-                                <textarea id="message" rows="4" class="w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                <textarea id="message" rows="4" class="w-full p-2 border rounded-md focus:ring-blue-600 focus:border-blue-600"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition">Submit Enquiry</button>
+                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition">Submit Enquiry</button> {/* Submit button blue-600 */}
                         </form>
                     </div>
                 </div>
@@ -514,7 +552,7 @@
         </section>
     </main>
     
-    <footer class="bg-gray-900 text-white">
+    <footer class="bg-slate-900 text-white"> {/* Footer BG to slate-900 */}
         <div class="container mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -559,7 +597,26 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="scripts.js"></script>
+
+    <!-- Admission Popup Modal -->
+    <div id="admission-popup-overlay" class="hidden fixed inset-0 bg-slate-900 bg-opacity-75 flex items-center justify-center z-[100]">
+        <div id="admission-popup-modal" class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md mx-4 transform transition-all opacity-0 scale-95">
+            <button id="close-admission-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="text-center">
+                <img src="https://placehold.co/400x250/93C5FD/0F172A?text=Admissions+2025-26+Open!" alt="Admissions Open" class="w-full h-auto object-cover rounded-md mb-6">
+                <h3 class="text-2xl font-bold text-blue-700 mb-3">Admissions Open for 2025-26!</h3>
+                <p class="text-gray-600 mb-6">Secure your child's future at Sample School. Explore our programs and begin your journey with us.</p>
+                <a href="#admissions" id="popup-admissions-link" class="w-full block bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition text-center">
+                    Learn More & Apply
+                </a>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

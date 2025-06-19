@@ -21,7 +21,7 @@ body {
 }
 .swiper-button-next, .swiper-button-prev {
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(37, 99, 235, 0.5); /* Primary blue (blue-600) at 50% opacity */
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -30,7 +30,7 @@ body {
     font-size: 24px;
 }
 .swiper-pagination-bullet-active {
-    background: #FFFFFF;
+    background: #10B981; /* Accent Green (green-500) */
 }
 
 .cta-glow {
@@ -54,10 +54,11 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: var(--underline-width, 0px); /* Use CSS variable, default to 0 */
     height: 4px;
-    background-color: #3b82f6; /* blue-500 */
+    background-color: #2563EB; /* Updated to blue-600 */
     border-radius: 2px;
+    transition: width 0.5s ease-out; /* Fallback or enhancement for GSAP */
 }
 
 .accordion-content {
